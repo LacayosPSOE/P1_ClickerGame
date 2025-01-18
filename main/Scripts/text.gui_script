@@ -1,0 +1,7 @@
+function on_message(self, message_id, message, sender)
+	if message_id == hash("update_text") then
+		local text_node = gui.get_node("text") 
+		local count = message.count 
+		gui.set_text(text_node, "Clicks: " .. count) -- Update the text
+	end
+end

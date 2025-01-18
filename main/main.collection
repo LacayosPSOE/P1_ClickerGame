@@ -1,12 +1,24 @@
 name: "main"
 scale_along_z: 0
 embedded_instances {
+  id: "Button"
+  data: "components {\n"
+  "  id: \"button\"\n"
+  "  component: \"/main/button.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances {
   id: "Background"
   data: "embedded_components {\n"
   "  id: \"img\"\n"
   "  type: \"sprite\"\n"
   "  data: \"default_animation: \\\"Background\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "size {\\n"
+  "  x: 960.0\\n"
+  "  y: 640.0\\n"
+  "}\\n"
   "textures {\\n"
   "  sampler: \\\"texture_sampler\\\"\\n"
   "  texture: \\\"/main/Resources/Textures.atlas\\\"\\n"
@@ -20,10 +32,10 @@ embedded_instances {
   ""
 }
 embedded_instances {
-  id: "Button"
+  id: "text_controller"
   data: "components {\n"
-  "  id: \"button\"\n"
-  "  component: \"/main/button.gui\"\n"
+  "  id: \"text\"\n"
+  "  component: \"/main/text.gui\"\n"
   "}\n"
   ""
 }

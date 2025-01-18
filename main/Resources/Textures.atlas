@@ -4,4 +4,7 @@ images {
 images {
   image: "/main/Assets/Seed.png"
 }
+images {
+  image: "/main/Assets/Background.png"
+}
 extrude_borders: 2

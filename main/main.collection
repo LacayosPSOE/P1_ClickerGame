@@ -1,7 +1,7 @@
 name: "main"
 scale_along_z: 0
 embedded_instances {
-  id: "go"
+  id: "MainButton"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"

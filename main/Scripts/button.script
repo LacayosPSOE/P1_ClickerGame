@@ -1,0 +1,24 @@
+local counter = 0
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	counter = 0
+	print("Sprite counter", counter)
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("touch") and action.pressed then
+		local buttonPos = go.get_position()
+		local buttonSize = go.get("#sprite", "size")
+
+		local minX = buttonPos.x - buttonSize.x / 2
+		local maxX = buttonPos.x + buttonSize.x / 2
+		local minY = buttonPos.y - buttonSize.y / 2
+		local maxY = buttonPos.y + buttonSize.y / 2
+
+		if action.x >= minX and action.x <= maxX and action.y >= minY and action.y <= maxY then
+			counter = counter + 1
+			print("Total Sprite clicks", counter)
+		end
+	end
+end

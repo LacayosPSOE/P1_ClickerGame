@@ -18,12 +18,40 @@ embedded_instances {
   "  }\n"
   "}\n"
   ""
+  position {
+    z: -1.0
+  }
 }
 embedded_instances {
-  id: "Button"
+  id: "ButtonSprite"
   data: "components {\n"
   "  id: \"button\"\n"
-  "  component: \"/main/button.gui\"\n"
+  "  component: \"/main/Scripts/button.script\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"sprite\"\n"
+  "  type: \"sprite\"\n"
+  "  data: \"default_animation: \\\"Seed\\\"\\n"
+  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
+  "textures {\\n"
+  "  sampler: \\\"texture_sampler\\\"\\n"
+  "  texture: \\\"/main/Resources/Textures.atlas\\\"\\n"
+  "}\\n"
+  "\"\n"
+  "  scale {\n"
+  "    x: 0.173333\n"
+  "    y: 0.173333\n"
+  "    z: 0.173333\n"
+  "  }\n"
   "}\n"
   ""
+  position {
+    x: 480.0
+    y: 320.0
+  }
+  scale3 {
+    x: 0.76
+    y: 0.76
+    z: 0.76
+  }
 }

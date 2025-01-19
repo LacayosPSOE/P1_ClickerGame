@@ -21,7 +21,7 @@ Requisits d’entrega (només cal fer una entrega per equip):
 ## Punts a Realitzar
 
 - [x] 1p (obligatori): Implementació d’un GameObject amb un component sprite que reaccioni en cas de fer-li click amb el mouse.
-- [ ] 1p (obligatori): Mostrar el nombre de clicks en una gui dintre d’un node text
+- [x] 1p (obligatori): Mostrar el nombre de clicks en una gui dintre d’un node text
 - [x] 2p: Cada 10 clicks spawnejar un GameObject amb un component sprite
 - [ ] 2p: Mostrar una gui amb un node pie que reflecteixi el percentatge de clicks que portem per spawnejar un nou objecte.
 - [ ] 2p: Fer que els objectes spawnejats sumin clicks extres cada 3 segons

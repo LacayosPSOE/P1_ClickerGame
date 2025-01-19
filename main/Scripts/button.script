@@ -18,7 +18,21 @@ function on_input(self, action_id, action)
 
 		if action.x >= minX and action.x <= maxX and action.y >= minY and action.y <= maxY then
 			counter = counter + 1
+			if counter % 10 == 0 then
+				spawnPigeon()
+			end
 			print("Total Sprite clicks", counter)
 		end
 	end
+end
+
+function spawnPigeon()
+	local screenWidth = tonumber(sys.get_config("display.width"))
+	local screenHeight = tonumber(sys.get_config("display.height"))
+
+	local randomX = math.random(0, screenWidth)
+	local randomY = math.random(0, screenHeight)
+	local randomPosition = vmath.vector3(randomX, randomY, 0)
+
+	factory.create("#pigeonFactory", randomPosition, nil, nil, 1)
 end

@@ -44,6 +44,12 @@ embedded_instances {
   "    z: 0.173333\n"
   "  }\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"pigeonFactory\"\n"
+  "  type: \"factory\"\n"
+  "  data: \"prototype: \\\"/main/Resources/Pigeon.go\\\"\\n"
+  "\"\n"
+  "}\n"
   ""
   position {
     x: 480.0

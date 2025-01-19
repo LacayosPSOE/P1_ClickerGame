@@ -1,14 +1,6 @@
 name: "main"
 scale_along_z: 0
 embedded_instances {
-  id: "Button"
-  data: "components {\n"
-  "  id: \"button\"\n"
-  "  component: \"/main/button.gui\"\n"
-  "}\n"
-  ""
-}
-embedded_instances {
   id: "Background"
   data: "embedded_components {\n"
   "  id: \"img\"\n"
@@ -39,6 +31,10 @@ embedded_instances {
   data: "components {\n"
   "  id: \"text\"\n"
   "  component: \"/main/text.gui\"\n"
+  "}\n"
+  ""
+}
+embedded_instances{
   id: "ButtonSprite"
   data: "components {\n"
   "  id: \"button\"\n"

@@ -1,0 +1,17 @@
+local max_clicks = 10 
+
+local counter = 0 
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("increment_counter") then
+		counter = counter + (message.value or 1)
+
+		local percentage = counter % max_clicks / max_clicks
+
+		local pie_node = gui.get_node("pie")
+
+		local min_size = 5 
+		local new_width = math.max(256 * percentage) 
+		gui.set_size(pie_node, vmath.vector3(new_width, 128, 0))
+	end
+end

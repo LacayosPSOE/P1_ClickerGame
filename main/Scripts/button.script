@@ -19,6 +19,8 @@ function on_input(self, action_id, action)
 		if action.x >= minX and action.x <= maxX and action.y >= minY and action.y <= maxY then
 			counter = counter + 1
 			msg.post("text_controller", "update_text", { count = counter })
+			msg.post("percentage_controller", "increment_counter", { value = 1 })
+			
 			if counter % 10 == 0 then
 				spawnPigeon()
 			end

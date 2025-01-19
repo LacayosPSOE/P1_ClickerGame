@@ -3,7 +3,7 @@ local counter = 0
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	counter = 0
-	print("Sprite counter", counter)
+	msg.post("text_controller", "update_text", { count = counter })
 end
 
 function on_input(self, action_id, action)
@@ -18,10 +18,10 @@ function on_input(self, action_id, action)
 
 		if action.x >= minX and action.x <= maxX and action.y >= minY and action.y <= maxY then
 			counter = counter + 1
+			msg.post("text_controller", "update_text", { count = counter })
 			if counter % 10 == 0 then
 				spawnPigeon()
 			end
-			print("Total Sprite clicks", counter)
 		end
 	end
 end

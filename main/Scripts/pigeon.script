@@ -1,8 +1,8 @@
-go.property("width", 64) 
-go.property("height", 64) 
-go.property("increment_interval", 3) 
+go.property("width", 64)
+go.property("height", 64)
+go.property("increment_interval", 3)
 function init(self)
-	go.set_scale(vmath.vector3(self.width / 64, self.height / 64, 1)) 
+	go.set_scale(vmath.vector3(self.width / 64, self.height / 64, 1))
 
 	self.timer = 0
 end

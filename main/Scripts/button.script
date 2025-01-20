@@ -17,13 +17,7 @@ function on_input(self, action_id, action)
 		local maxY = buttonPos.y + buttonSize.y / 2
 
 		if action.x >= minX and action.x <= maxX and action.y >= minY and action.y <= maxY then
-			counter = counter + 1
-			msg.post("text_controller", "update_text", { count = counter })
-			msg.post("percentage_controller", "increment_counter", { value = 1 })
-			
-			if counter % 10 == 0 then
-				spawnPigeon()
-			end
+			increment_counter(1)
 		end
 	end
 end
@@ -38,10 +32,19 @@ function spawnPigeon()
 
 	factory.create("#pigeonFactory", randomPosition, nil, nil, 1)
 end
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash("pigeon_click") then
-		counter = counter + message.value
-		msg.post("text_controller", "update_text", { count = counter })
-		msg.post("percentage_controller", "increment_counter", { value = message.value })
+		increment_counter(message.value)
+	end
+end
+
+function increment_counter(value)
+	counter = counter + value
+	msg.post("text_controller", "update_text", { count = counter })
+	msg.post("percentage_controller", "increment_counter", { value = 1 })
+
+	if counter % 10 == 0 then
+		spawnPigeon()
 	end
 end

@@ -5,7 +5,7 @@ nodes {
     y: 71.0
   }
   size {
-    x: 200.0
+    x: 100.0
     y: 100.0
   }
   type: TYPE_PIE

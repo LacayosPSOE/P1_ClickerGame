@@ -1,9 +1,9 @@
 local max_clicks = 10
-
 local counter = 0
+local pie_node
 
 function init(self)
-	local pie_node = gui.get_node("pie")
+	pie_node = gui.get_node("pie")
 	gui.set_fill_angle(pie_node, 0)
 end
 

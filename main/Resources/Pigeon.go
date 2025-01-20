@@ -1,3 +1,7 @@
+components {
+  id: "pigeon"
+  component: "/main/Scripts/pigeon.script"
+}
 embedded_components {
   id: "sprite"
   type: "sprite"

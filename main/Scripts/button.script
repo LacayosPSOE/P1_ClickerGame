@@ -38,3 +38,10 @@ function spawnPigeon()
 
 	factory.create("#pigeonFactory", randomPosition, nil, nil, 1)
 end
+function on_message(self, message_id, message, sender)
+	if message_id == hash("pigeon_click") then
+		counter = counter + message.value
+		msg.post("text_controller", "update_text", { count = counter })
+		msg.post("percentage_controller", "increment_counter", { value = message.value })
+	end
+end

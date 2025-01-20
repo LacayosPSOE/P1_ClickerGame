@@ -1,0 +1,13 @@
+function init(self)
+	self.timer = 0 
+	self.increment_interval = 3 
+end
+
+function update(self, dt)
+	self.timer = self.timer + dt 
+
+	if self.timer >= self.increment_interval then
+		self.timer = self.timer - self.increment_interval 
+		msg.post("main:/ButtonSprite#button", "pigeon_click", { value = 1 })
+	end
+end

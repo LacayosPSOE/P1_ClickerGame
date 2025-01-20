@@ -1,0 +1,17 @@
+local max_clicks = 10
+local counter = 0
+local pie_node
+
+function init(self)
+	pie_node = gui.get_node("pie")
+	gui.set_fill_angle(pie_node, 0)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("increment_counter") then
+		counter = counter + message.value
+
+		local percentage = 360 / max_clicks * (counter % max_clicks)
+		gui.set_fill_angle(pie_node, percentage)
+	end
+end

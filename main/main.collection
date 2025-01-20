@@ -34,7 +34,7 @@ embedded_instances {
   "}\n"
   ""
 }
-embedded_instances{
+embedded_instances {
   id: "ButtonSprite"
   data: "components {\n"
   "  id: \"button\"\n"
@@ -71,5 +71,17 @@ embedded_instances{
     x: 0.76
     y: 0.76
     z: 0.76
+  }
+}
+embedded_instances {
+  id: "percentage_controller"
+  data: "components {\n"
+  "  id: \"percentage\"\n"
+  "  component: \"/main/percentage.gui\"\n"
+  "}\n"
+  ""
+  position {
+    x: 99.0
+    y: 305.0
   }
 }

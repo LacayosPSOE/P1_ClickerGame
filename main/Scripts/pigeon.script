@@ -1,0 +1,18 @@
+go.property("width", 64)
+go.property("height", 64)
+go.property("increment_interval", 3)
+function init(self)
+	go.set_scale(vmath.vector3(self.width / 64, self.height / 64, 1))
+
+	self.timer = 0
+end
+
+function update(self, dt)
+	self.timer = self.timer + dt
+
+	if self.timer >= self.increment_interval then
+		self.timer = self.timer - self.increment_interval
+		-- Enviar un mensaje al objeto principal para sumar un clic
+		msg.post("main:/ButtonSprite#button", "pigeon_click", { value = 1 })
+	end
+end

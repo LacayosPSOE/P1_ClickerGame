@@ -1,6 +1,15 @@
 go.property("width", 64)
 go.property("height", 64)
 go.property("increment_interval", 3)
+
+local playback = go.PLAYBACK_ONCE_FORWARD
+local easing = go.EASING_LINEAR
+local complete_function = nil
+go.property("duration", 0.25)
+go.property("delay", 0)
+go.property("from_scale_animation", 1)
+go.property("to_scale_animation", 0.8)
+
 function init(self)
 	go.set_scale(vmath.vector3(self.width / 64, self.height / 64, 1))
 
@@ -14,5 +23,12 @@ function update(self, dt)
 		self.timer = self.timer - self.increment_interval
 		-- Enviar un mensaje al objeto principal para sumar un clic
 		msg.post("main:/ButtonSprite#button", "pigeon_click", { value = 1 })
+		go.animate("#sprite", "scale", playback, vmath.vector3(self.to_scale_animation, self.to_scale_animation, 1),
+			easing,
+			self.duration, self.delay, function()
+				go.animate("#sprite", "scale", playback,
+					vmath.vector3(self.from_scale_animation, self.from_scale_animation, 1), easing, self.duration,
+					self.delay)
+			end)
 	end
 end

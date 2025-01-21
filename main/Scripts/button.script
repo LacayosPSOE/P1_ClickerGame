@@ -1,4 +1,12 @@
 local counter = 0
+local playback = go.PLAYBACK_ONCE_FORWARD
+local easing = go.EASING_LINEAR
+local complete_function = nil
+go.property("duration", 0.5)
+go.property("delay", 0)
+go.property("from_scale_animation", 1)
+go.property("to_scale_animation", 0.8)
+
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -17,7 +25,7 @@ function on_input(self, action_id, action)
 		local maxY = buttonPos.y + buttonSize.y / 2
 
 		if action.x >= minX and action.x <= maxX and action.y >= minY and action.y <= maxY then
-			increment_counter(1)
+			increment_counter(self, 1)
 		end
 	end
 end
@@ -35,11 +43,17 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("pigeon_click") then
-		increment_counter(message.value)
+		increment_counter(self, message.value)
 	end
 end
 
-function increment_counter(value)
+function increment_counter(self, value)
+	go.animate("#sprite", "scale", playback, vmath.vector3(self.to_scale_animation, self.to_scale_animation, 1), easing,
+		self.duration, self.delay, function()
+			go.animate("#sprite", "scale", playback,
+				vmath.vector3(self.from_scale_animation, self.from_scale_animation, 1), easing, self.duration,
+				self.delay)
+		end)
 	counter = counter + value
 	msg.post("text_controller", "update_text", { count = counter })
 	msg.post("percentage_controller", "increment_counter", { value = 1 })

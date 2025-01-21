@@ -27,7 +27,7 @@ Requisits d’entrega (només cal fer una entrega per equip):
 - [x] 2p: Fer que els objectes spawnejats sumin clicks extres cada 3 segons
 - [x] 0.5p: Fer almenys 3 variables editables desde la pestanya properties
 - [ ] 1p: Sonoritzar el joc amb almenys 3 sons
-- [ ] 2p: Crear i implementar l’ús d’alguna animació (és igual quin tipus feu)
+- [x] 2p: Crear i implementar l’ús d’alguna animació (és igual quin tipus feu)
 - [ ] 0.5p: Crear i entregar l’executable del joc
 
 ---

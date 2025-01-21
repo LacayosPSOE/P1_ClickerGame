@@ -1,6 +1,21 @@
 components {
   id: "pigeon"
   component: "/main/Scripts/pigeon.script"
+  properties {
+    id: "duration"
+    value: "0.1"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "from_scale_animation"
+    value: "0.12"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
+    id: "to_scale_animation"
+    value: "0.1"
+    type: PROPERTY_TYPE_NUMBER
+  }
 }
 embedded_components {
   id: "sprite"

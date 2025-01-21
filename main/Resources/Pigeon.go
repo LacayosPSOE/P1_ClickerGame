@@ -36,7 +36,7 @@ embedded_components {
 embedded_components {
   id: "click"
   type: "sound"
-  data: "sound: \"/main/Assets/Sounds/751083__smallconfusion__mechanical-plastic-click-05.ogg\"\n"
+  data: "sound: \"/main/Assets/Sounds/445119__breviceps__animal-cartoon-cooing-curr-parrot.ogg\"\n"
   "gain: 10.0\n"
   ""
 }

@@ -38,6 +38,7 @@ function spawnPigeon()
 	local randomY = math.random(0, screenHeight)
 	local randomPosition = vmath.vector3(randomX, randomY, 0)
 
+	sound.play("#spawn")
 	factory.create("#pigeonFactory", randomPosition, nil, nil, 1)
 end
 
@@ -48,6 +49,7 @@ function on_message(self, message_id, message, sender)
 end
 
 function increment_counter(self, value)
+	sound.play("#click")
 	go.animate("#sprite", "scale", playback, vmath.vector3(self.to_scale_animation, self.to_scale_animation, 1), easing,
 		self.duration, self.delay, function()
 			go.animate("#sprite", "scale", playback,

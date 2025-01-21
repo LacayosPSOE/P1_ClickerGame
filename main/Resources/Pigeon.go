@@ -33,3 +33,10 @@ embedded_components {
     z: 0.12
   }
 }
+embedded_components {
+  id: "click"
+  type: "sound"
+  data: "sound: \"/main/Assets/Sounds/751083__smallconfusion__mechanical-plastic-click-05.ogg\"\n"
+  "gain: 10.0\n"
+  ""
+}

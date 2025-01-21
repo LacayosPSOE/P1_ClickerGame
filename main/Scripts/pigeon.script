@@ -23,6 +23,7 @@ function update(self, dt)
 		self.timer = self.timer - self.increment_interval
 		-- Enviar un mensaje al objeto principal para sumar un clic
 		msg.post("main:/ButtonSprite#button", "pigeon_click", { value = 1 })
+		sound.play("#click")
 		go.animate("#sprite", "scale", playback, vmath.vector3(self.to_scale_animation, self.to_scale_animation, 1),
 			easing,
 			self.duration, self.delay, function()
